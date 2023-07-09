@@ -3,30 +3,44 @@ package POJO;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-public class Employee {
-    private int id;
-    private int age;
-    private String first_name;
-    private String last_name;
-    private String gender;
-    private String city_name;
-    private int city_id;
+import javax.persistence.*;
 
-    public Employee(int id, String first_name, String last_name, String gender, int city_id) {
+@Entity
+@Table(name = "employes")
+
+public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(name = "age")
+    private int age;
+    @Column(name = "first_name")
+    private String firstName;
+    @Column(name = "last_name")
+    private String lastName;
+    @Column(name = "gender")
+    private String gender;
+    @Column(name = "city_id")
+    private int cityId;
+
+    public Employee(int id, String firstName, String lastName, String gender, int cityId) {
         this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.gender = gender;
-        this.city_id = city_id;
+        this.cityId = cityId;
     }
-    public Employee(int id, String first_name, String last_name, String gender,int age, int city_id) {
-        this.id = id;
-        this.age = age;
-        this.first_name = first_name;
-        this.last_name = last_name;
+    public Employee(String firstName, String lastName, String gender,int age, int cityId) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.gender = gender;
         this.age = age;
-        this.city_id = city_id;
+        this.cityId = cityId;
+    }
+
+
+    public Employee() {
+
     }
 
     public int getId() {
@@ -37,20 +51,18 @@ public class Employee {
         return age;
     }
 
-    public String getFirst_name() {
-        return first_name;
-    }
+    public String getFirstName() { return firstName; }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
     public String getGender() {
         return gender;
     }
 
-    public int getCity_id() {
-        return city_id;
+    public int getCityId() {
+        return cityId;
     }
 
     @Override
@@ -58,8 +70,8 @@ public class Employee {
         return "Employee{" +
                 "id=" + id +
                 ", age=" + age +
-                ", first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
+                ", first_name='" + firstName + '\'' +
+                ", last_name='" + lastName + '\'' +
                 ", gender='" + gender;
     }
 }
