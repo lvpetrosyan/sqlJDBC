@@ -13,14 +13,14 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) throws SQLException {
         EmployeeDAOHibernate employeeDAOHibernate = new EmployeeDAOHibernate();
-        Employee employee= new Employee("Li","lank", "f", 31, 1);
-        Employee employee11= new Employee(45,"lo","plov","m",2);
-        System.out.println(employeeDAOHibernate.findBuId(31));
-        System.out.println(employeeDAOHibernate.getAllObjectInEmployee());
-        employeeDAOHibernate.save(employee);
-        System.out.println(employeeDAOHibernate.getAllObjectInEmployee());
-        employeeDAOHibernate.deleteById(48);
-        employeeDAOHibernate.updateByIdEmployee(45,employee11);
+       Employee employee= new Employee("Li","lank", "f", 31, 1);
+     //   Employee employee11= new Employee(45,"lo","plov","m",2);
+      //  System.out.println(employeeDAOHibernate.findBuId(31));
+      //  System.out.println(employeeDAOHibernate.getAllObjectInEmployee());
+      //  employeeDAOHibernate.save(employee);
+     //   System.out.println(employeeDAOHibernate.getAllObjectInEmployee());
+        employeeDAOHibernate.deleteById(43);
+    //    employeeDAOHibernate.updateByIdEmployee(45,employee);
 
 
 //        /*ДЗ1 с JDBC

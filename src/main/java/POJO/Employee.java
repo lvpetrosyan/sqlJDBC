@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "employes")
@@ -22,6 +23,9 @@ public class Employee {
     private String gender;
     @Column(name = "city_id")
     private int cityId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "city_id")
+    private City city;
 
     public Employee(int id, String firstName, String lastName, String gender, int cityId) {
         this.id = id;
@@ -63,6 +67,10 @@ public class Employee {
 
     public int getCityId() {
         return cityId;
+    }
+
+    public City getCity() {
+        return city;
     }
 
     @Override
