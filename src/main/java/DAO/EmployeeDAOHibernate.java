@@ -41,9 +41,13 @@ public class EmployeeDAOHibernate implements EmployeeDAO {
     @Override
     public void updateByIdEmployee(int id, Employee employee) throws SQLException {
         entityManager.getTransaction().begin();
-        Employee nowEmployee= entityManager.find(Employee.class, id);
-        nowEmployee= entityManager.merge(employee);
-        entityManager.getTransaction().commit();
+        Employee nowEmployee = entityManager.find(Employee.class, id);
+        if (nowEmployee == null) {
+            System.out.println("Такого объекта не существует!");
+        } else {
+            nowEmployee = entityManager.merge(employee);
+            entityManager.getTransaction().commit();
+        }
         entityManager.close();
         entityManagerFactory.close();
     }
@@ -51,9 +55,13 @@ public class EmployeeDAOHibernate implements EmployeeDAO {
     @Override
     public void deleteById(int id) throws SQLException {
         entityManager.getTransaction().begin();
-        Employee employee= entityManager.find(Employee.class, id);
-        entityManager.remove(employee);
-        entityManager.getTransaction().commit();
+        Employee employee = entityManager.find(Employee.class, id);
+        if (employee == null) {
+            System.out.println("Такого объекта не существует!");
+        } else {
+            entityManager.remove(employee);
+            entityManager.getTransaction().commit();
+        }
         entityManager.close();
         entityManagerFactory.close();
     }

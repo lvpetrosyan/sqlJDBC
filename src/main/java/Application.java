@@ -1,6 +1,5 @@
-import DAO.EmployeeDAO;
-import DAO.EmployeeDAOHibernate;
-import DAO.EmployeeDaoJDBC;
+import DAO.*;
+import POJO.City;
 import POJO.Employee;
 
 import javax.persistence.EntityManager;
@@ -13,14 +12,22 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) throws SQLException {
         EmployeeDAOHibernate employeeDAOHibernate = new EmployeeDAOHibernate();
-       Employee employee= new Employee("Li","lank", "f", 31, 1);
-     //   Employee employee11= new Employee(45,"lo","plov","m",2);
-      //  System.out.println(employeeDAOHibernate.findBuId(31));
-      //  System.out.println(employeeDAOHibernate.getAllObjectInEmployee());
-      //  employeeDAOHibernate.save(employee);
-     //   System.out.println(employeeDAOHibernate.getAllObjectInEmployee());
-        employeeDAOHibernate.deleteById(43);
-    //    employeeDAOHibernate.updateByIdEmployee(45,employee);
+        Employee employee = new Employee("Lilo", "lank", "f", 31, 1);
+        Employee employee11 = new Employee(50, "lo", "plov", "m", 2);
+        // System.out.println(employeeDAOHibernate.findBuId(28));
+        // System.out.println(employeeDAOHibernate.getAllObjectInEmployee());
+        // employeeDAOHibernate.save(employee);
+        // System.out.println(employeeDAOHibernate.getAllObjectInEmployee());
+        // employeeDAOHibernate.deleteById(43);
+        // employeeDAOHibernate.updateByIdEmployee(50,employee11);
+        CityDaoImpl cityDao= new CityDaoImpl();
+        City city= new City(5,"СПБ");
+        // System.out.println(cityDao.findByIdCity(1));
+        // System.out.println(cityDao.getAllObjectInCity());
+        // cityDao.saveCity(city);
+        // cityDao.updateByIdCity(5,city);
+         cityDao.deleteByIdCity(11);
+
 
 
 //        /*ДЗ1 с JDBC

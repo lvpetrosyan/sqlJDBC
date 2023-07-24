@@ -21,8 +21,8 @@ public class Employee {
     private String lastName;
     @Column(name = "gender")
     private String gender;
-    @Column(name = "city_id")
-    private int cityId;
+    @Column(name = "city_id", insertable = false, updatable = false)
+    private Integer cityId;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "city_id")
     private City city;

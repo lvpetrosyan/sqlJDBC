@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2ecfe4c-d5d9-4171-b247-4feb21568273" name="Changes" comment="hibernate">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/CityDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/CityDaoImpl.java" afterDir="false" />
+    <list default="true" id="e2ecfe4c-d5d9-4171-b247-4feb21568273" name="Changes" comment="hibernate join">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CityDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CityDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/EmployeeDAOHibernate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/EmployeeDAOHibernate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/POJO/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/POJO/City.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/POJO/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/POJO/Employee.java" afterDir="false" />
     </list>
@@ -94,7 +93,8 @@
       <workItem from="1688903199734" duration="10981000" />
       <workItem from="1689189868674" duration="2526000" />
       <workItem from="1689510657549" duration="10415000" />
-      <workItem from="1690119219357" duration="6268000" />
+      <workItem from="1690119219357" duration="6841000" />
+      <workItem from="1690204425507" duration="7838000" />
     </task>
     <task id="LOCAL-00001" summary="com1">
       <created>1687718557294</created>
@@ -131,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688916838157</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="hibernate join">
+      <created>1690126292183</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1690126292183</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +160,8 @@
     <MESSAGE value="com2" />
     <MESSAGE value="com3" />
     <MESSAGE value="hibernate" />
-    <option name="LAST_COMMIT_MESSAGE" value="hibernate" />
+    <MESSAGE value="hibernate join" />
+    <option name="LAST_COMMIT_MESSAGE" value="hibernate join" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

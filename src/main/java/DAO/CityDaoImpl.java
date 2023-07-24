@@ -9,12 +9,13 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class CityDaoImpl implements CityDao{
+public class CityDaoImpl implements CityDao {
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myPersistenceUnit");
     EntityManager entityManager = entityManagerFactory.createEntityManager();
+
     @Override
     public City findByIdCity(int id) {
-        City city= entityManager.find(City.class, id);
+        City city = entityManager.find(City.class, id);
         entityManager.close();
         entityManagerFactory.close();
         return city;
@@ -22,10 +23,10 @@ public class CityDaoImpl implements CityDao{
 
     @Override
     public List<City> getAllObjectInCity() {
-       final String jbqlQuery= "from City";
-       TypedQuery<City> query= entityManager.createQuery(jbqlQuery, City.class);
-       List<City> cityList=query.getResultList();
-       return cityList;
+        final String jbqlQuery = "from City";
+        TypedQuery<City> query = entityManager.createQuery(jbqlQuery, City.class);
+        List<City> cityList = query.getResultList();
+        return cityList;
     }
 
     @Override
@@ -41,9 +42,13 @@ public class CityDaoImpl implements CityDao{
     @Override
     public void updateByIdCity(int id, City city) {
         entityManager.getTransaction().begin();
-        City nowCity= entityManager.find(City.class, id);
-        nowCity= entityManager.merge(city);
-        entityManager.getTransaction().commit();
+        City nowCity = entityManager.find(City.class, id);
+        if (nowCity == null) {
+            System.out.println("Такого объекта не существует!");
+        } else {
+            nowCity = entityManager.merge(city);
+            entityManager.getTransaction().commit();
+        }
         entityManager.close();
         entityManagerFactory.close();
 
@@ -52,9 +57,13 @@ public class CityDaoImpl implements CityDao{
     @Override
     public void deleteByIdCity(int id) {
         entityManager.getTransaction().begin();
-        City nowCity= entityManager.find(City.class, id);
-        entityManager.remove(nowCity);
-        entityManager.getTransaction().commit();
+        City nowCity = entityManager.find(City.class, id);
+        if (nowCity == null) {
+            System.out.println("Такого объекта не существует!");
+        } else {
+            entityManager.remove(nowCity);
+            entityManager.getTransaction().commit();
+        }
         entityManager.close();
         entityManagerFactory.close();
 
